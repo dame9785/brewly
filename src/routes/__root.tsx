@@ -4,6 +4,8 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 
+import Navbar from '#/components/layout/navbar'
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -35,6 +37,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <Navbar />
         {children}
         <TanStackDevtools
           config={{

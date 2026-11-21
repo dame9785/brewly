@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --background: #f5efe5;
+  --foreground: #211a16;
+
+  --primary: #8b5e3c;
+  --primary-foreground: #ffffff;
+
+  --secondary: #d9c7ae;
+  --secondary-foreground: #211a16;
+
+  --surface: #ffffff;
+  --surface-muted: #eee5d8;
+
+  --border: #ded2c1;
+
+  --accent: #b87545;
+  --accent-foreground: #ffffff;
+
+  /* Typography */
+  --font-family-sans: Arial, Helvetica, sans-serif;
+
+  /* Border radius */
+  --radius-token-sm: 0.375rem;
+  --radius-token-md: 0.625rem;
+  --radius-token-lg: 1rem;
+  --radius-token-xl: 1.5rem;
+
+  /* Layout */
+  --container-max-width: 1280px;
+}

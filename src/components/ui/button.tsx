@@ -1,8 +1,11 @@
 type Props = {
   text: string;
-  size?: 's' | 'm' | 'l';
+  size: 's' | 'm' | 'l';
   variant?: 'primary' | 'secondary' | 'outline';
   type: 'button';
+  disabled?: boolean;
+  ariaLabel?: string;
+  ariaPressed?: boolean;
 };
 
 {
@@ -27,9 +30,9 @@ const variants = {
   outline: 'border border-border bg-transparent text-foreground hover:bg-muted',
 };
 
-function Button({ text, size = 'm', variant = 'primary', type = 'button' }: Props) {
+function Button({ ariaLabel, ariaPressed, text, size = 'm', variant = 'primary', type = 'button', disabled = false }: Props) {
   return (
-    <button type={type} className={`${baseStyles} ${primaryStyles} ${variants[variant]} ${sizes[size]}`}>
+    <button type={type} aria-label={ariaLabel} aria-pressed={ariaPressed} disabled={disabled} className={`${baseStyles} ${primaryStyles} ${variants[variant]} ${sizes[size]}`}>
       {text}
     </button>
   );

@@ -9,7 +9,7 @@ const sizes = {
   l: 'px-6 py-4 text-lg',
 };
 
-const baseStyles = 'inline-flex w-full items-center justify-center rounded-md font-medium transition-all duration-200 sm:w-auto';
+const baseStyles = 'inline-flex cursor-pointer w-full items-center justify-center rounded-md font-medium transition-all duration-200 sm:w-auto';
 
 const primaryStyles = 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0';
 

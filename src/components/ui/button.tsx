@@ -5,6 +5,9 @@ type Props = {
   type: 'button';
 };
 
+{
+  /* Button SIZE */
+}
 const sizes = {
   s: 'px-3 py-2 text-sm',
   m: 'px-4 py-3 text-base',
@@ -20,9 +23,7 @@ const primaryStyles = 'bg-primary text-primary-foreground shadow-sm hover:bg-pri
 
 const variants = {
   primary: 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0',
-
   secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-
   outline: 'border border-border bg-transparent text-foreground hover:bg-muted',
 };
 

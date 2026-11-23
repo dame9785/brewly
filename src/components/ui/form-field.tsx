@@ -14,8 +14,8 @@ type Props = {
 function FormField({ label, htmlFor, children, error, description, icon }: Props) {
   return (
     <div className="flex flex-col gap-1.5">
-      <div className="flex items-center gap-2">
-        {icon && <span className="text-muted-foreground">{icon}</span>}
+      <div className="flex min-h-6 items-center gap-2">
+        {icon && <span className="text-muted-foreground flex items-center">{icon}</span>}
         <Label htmlFor={htmlFor}>{label}</Label>
       </div>
 

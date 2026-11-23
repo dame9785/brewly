@@ -30,8 +30,8 @@ function Hero() {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button text="Shop Now" size="l" />
-            <Button text="Explore Categories" size="l" />
+            <Button type="button" text="Shop Now" size="l" variant="primary" />
+            <Button type="button" text="Explore Categories" size="l" variant="primary" />
           </div>
         </div>
       </div>

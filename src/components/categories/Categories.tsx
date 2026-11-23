@@ -2,7 +2,9 @@
 import CategoryHeading from '@/components/categories/CategoryHeading';
 import CategoryCard from '@/components/categories/CategoryCard';
 
-// //Categories OBJECTS
+{
+  /* Categories objects */
+}
 const CATEGORIES = [
   {
     title: 'Coffee',

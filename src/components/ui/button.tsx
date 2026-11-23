@@ -1,11 +1,9 @@
-type Props = {
+import type { ButtonHTMLAttributes } from 'react';
+
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   text: string;
   size?: 's' | 'm' | 'l';
   variant?: 'primary' | 'secondary' | 'outline';
-  type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
-  ariaLabel?: string;
-  ariaPressed?: boolean;
 };
 
 {
@@ -20,17 +18,19 @@ const sizes = {
 {
   /* Button Styling */
 }
-const baseStyles = 'inline-flex w-full items-center justify-center rounded-md font-medium transition-all duration-200 sm:w-auto cursor-pointer whitespace-normal text-center disabled:pointer-events-none disabled:opacity-50';
+const baseStyles =
+  'inline-flex w-full items-center justify-center rounded-md font-medium transition-all duration-200 sm:w-auto cursor-pointer whitespace-normal text-center disabled:pointer-events-none disabled:opacity-50';
 
 const variants = {
-  primary: 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0',
+  primary:
+    'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0',
   secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
   outline: 'border border-border bg-transparent text-foreground hover:bg-muted',
 };
 
-function Button({ ariaLabel, ariaPressed, text, size = 'm', variant = 'primary', type = 'button', disabled = false }: Props) {
+function Button({ text, size = 'm', variant = 'primary', type = 'button', disabled = false, ...props }: Props) {
   return (
-    <button type={type} aria-label={ariaLabel} aria-pressed={ariaPressed} disabled={disabled} className={`${baseStyles} ${variants[variant]} ${sizes[size]}`}>
+    <button type={type} disabled={disabled} className={`${baseStyles} ${variants[variant]} ${sizes[size]}`} {...props}>
       {text}
     </button>
   );

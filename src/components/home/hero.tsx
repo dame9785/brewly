@@ -1,4 +1,4 @@
-import Button from '@/components/ui/button';
+import Button from '@/components/ui/Button';
 
 function Hero() {
   return (
@@ -13,7 +13,9 @@ function Hero() {
           <div className="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
             <span className="bg-primary h-px w-8 sm:w-12" />
 
-            <p className="text-primary text-xs font-semibold tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">PREMIUM COFFEE</p>
+            <p className="text-primary text-xs font-semibold tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
+              PREMIUM COFFEE
+            </p>
 
             <span className="bg-primary h-px w-8 sm:w-12" />
           </div>
@@ -26,7 +28,9 @@ function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-foreground/80 mt-5 max-w-md text-base leading-7 sm:mt-6 sm:text-lg sm:leading-8">Discover our carefully selected coffee, accessories and everything you need for the perfect brew.</p>
+          <p className="text-foreground/80 mt-5 max-w-md text-base leading-7 sm:mt-6 sm:text-lg sm:leading-8">
+            Discover our carefully selected coffee, accessories and everything you need for the perfect brew.
+          </p>
 
           {/* Buttons */}
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import Label from '@/components/ui/label';
+import Label from '@/components/ui/Label';
 
 type Props = {
   label: string;
@@ -13,7 +13,7 @@ type Props = {
 
 function FormField({ label, htmlFor, children, error, description, icon }: Props) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="mt-5 flex flex-col gap-1.5">
       <div className="flex min-h-6 items-center gap-2">
         {icon && <span className="text-muted-foreground flex items-center">{icon}</span>}
         <Label htmlFor={htmlFor}>{label}</Label>

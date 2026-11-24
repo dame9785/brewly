@@ -101,6 +101,8 @@ function RegisterForm() {
           </FormField>
         )}
       </form.Field>
+
+      {/* Actions sumbit button & Go to login */}
       <div className="mt-3 flex gap-2">
         <Button text="Create account" type="submit" variant="primary" size="s" />
         <Button

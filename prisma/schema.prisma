@@ -52,6 +52,8 @@ model User {
   sessions      Session[]
   accounts      Account[]
 
+  role          UserRole  @default(USER)
+
   @@unique([email])
   @@map("user")
 }
@@ -102,4 +104,9 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+enum UserRole {
+  USER
+  ADMIN
 }

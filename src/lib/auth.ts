@@ -13,5 +13,16 @@ export const auth = betterAuth({
     enabled: true,
   },
 
+  user: {
+    additionalFields: {
+      role: {
+        type: 'string',
+        required: false,
+        defaultValue: 'USER',
+        input: false,
+      },
+    },
+  },
+
   plugins: [tanstackStartCookies()],
 });

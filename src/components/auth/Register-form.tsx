@@ -2,6 +2,9 @@
 import { useForm } from '@tanstack/react-form';
 import { useNavigate } from '@tanstack/react-router';
 
+// //Auth-client
+import { authClient } from '@/lib/auth-client';
+
 // //Lucide-React Icons
 import { UserRound, Mail, Lock } from 'lucide-react';
 
@@ -30,9 +33,18 @@ function RegisterForm() {
     },
 
     onSubmit: async ({ value }) => {
-      console.log(value);
+      const { error } = await authClient.signUp.email({
+        name: value.name,
+        email: value.email,
+        password: value.password,
+      });
 
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      if (error) {
+        console.error('Registration failed:', error);
+        return;
+      }
+
+      console.log('Registration successful!');
     },
   });
 
@@ -97,6 +109,7 @@ function RegisterForm() {
             label="Password"
             htmlFor="password"
             icon={<Lock size={18} />}
+            description="Use at least 8 characters."
           >
             <Input
               id="password"

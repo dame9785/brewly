@@ -19,7 +19,7 @@ export const Route = createFileRoute('/(auth)/register')({
 
 function RegisterPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-4 py-8">
+    <main className="flex flex-1 items-center justify-center px-4 py-8">
       <RegisterForm />
     </main>
   );

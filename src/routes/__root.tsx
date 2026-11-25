@@ -2,6 +2,9 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 
+// TOAST POP UP ALERT
+import { Toaster } from 'sonner';
+
 import appCss from '../styles.css?url';
 
 import Navbar from '@/components/layout/Navbar';
@@ -39,6 +42,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <Navbar />
         {children}
+
+        <Toaster
+          position="top-right"
+          duration={3000}
+          closeButton
+          theme="light"
+          toastOptions={{
+            classNames: {
+              toast: 'font-sans',
+              title: 'font-semibold text-foreground',
+              description: 'text-foreground/70',
+            },
+          }}
+        />
         <TanStackDevtools
           config={{
             position: 'bottom-right',

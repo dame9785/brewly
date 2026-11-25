@@ -8,6 +8,9 @@ import { authClient } from '@/lib/auth-client';
 // //Lucide-React Icons
 import { UserRound, Mail, Lock } from 'lucide-react';
 
+// // TOAST POP UP
+import { toast } from 'sonner';
+
 // // Components
 import FormField from '@/components/ui/Form-field';
 import Input from '#/components/ui/Input';
@@ -40,11 +43,16 @@ function RegisterForm() {
       });
 
       if (error) {
+        toast.error('Registration failed', {
+          description: error.message || 'Something went wrong. Please try again.',
+        });
         console.error('Registration failed:', error);
         return;
       }
 
-      console.log('Registration successful!');
+      toast.success('Account created successfully!', {
+        description: 'Welcome to Brewly! Your account is ready.',
+      });
     },
   });
 

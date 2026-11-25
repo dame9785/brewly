@@ -3,7 +3,7 @@ import { useForm } from '@tanstack/react-form';
 import { useNavigate } from '@tanstack/react-router';
 
 // //Auth-client
-import { authClient } from '@/lib/auth-client';
+import { authClient } from '#/lib/auth/auth-client';
 
 // //Lucide-React Icons
 import { UserRound, Mail, Lock } from 'lucide-react';

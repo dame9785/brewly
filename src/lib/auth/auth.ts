@@ -3,6 +3,7 @@ import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { tanstackStartCookies } from 'better-auth/tanstack-start';
 
 import { prisma } from '@/lib/prisma';
+import { sendPasswordResetEmail } from '@/lib/resend/email';
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
@@ -11,6 +12,11 @@ export const auth = betterAuth({
 
   emailAndPassword: {
     enabled: true,
+
+    // Send reset password link to users emailadress
+    sendResetPassword: async ({ user, url }) => {
+      await sendPasswordResetEmail(user.email, url);
+    },
   },
 
   user: {

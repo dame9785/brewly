@@ -2,7 +2,7 @@
 import { createFileRoute, redirect } from '@tanstack/react-router';
 
 // Better Auth handling
-import { getSession } from '@/lib/auth-server';
+import { getSession } from '#/lib/auth/auth-server';
 
 // Components
 import LoginForm from '@/components/auth/Login-form';

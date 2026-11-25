@@ -1,9 +1,9 @@
-// // Taanstack react-form && React-router
+// Tanstack react-form && React-router
 import { useForm } from '@tanstack/react-form';
 import { useNavigate } from '@tanstack/react-router';
 
 // Better auth Client
-import { authClient } from '@/lib/auth-client';
+import { authClient } from '#/lib/auth/auth-client';
 
 // @Sonner Toast pup up alert
 import { toast } from 'sonner';
@@ -136,6 +136,17 @@ function LoginForm() {
           size="s"
           onClick={() => navigate({ to: '/register' })}
         />
+      </div>
+
+      {/* Forgot Password */}
+      <div className="mt-4 flex justify-center">
+        <button
+          type="button"
+          onClick={() => navigate({ to: '/forgot-password' })}
+          className="text-primary hover:text-accent cursor-pointer text-sm font-medium transition-colors hover:underline"
+        >
+          Forgot your password?
+        </button>
       </div>
     </form>
   );

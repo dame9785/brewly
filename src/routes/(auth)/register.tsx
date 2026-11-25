@@ -1,5 +1,5 @@
 import { createFileRoute, redirect } from '@tanstack/react-router';
-import { getSession } from '@/lib/auth-server';
+import { getSession } from '#/lib/auth/auth-server';
 
 // // Components
 import RegisterForm from '#/components/auth/Register-form';

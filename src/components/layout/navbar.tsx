@@ -1,10 +1,10 @@
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { authClient } from '@/lib/auth-client';
+import { authClient } from '#/lib/auth/auth-client';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { toast } from 'sonner';
 
-import { signOut } from '@/lib/auth-actions';
+import { signOut } from '#/lib/auth/auth-actions';
 
 function Navbar() {
   const navigate = useNavigate();

@@ -62,6 +62,9 @@ function LoginForm() {
         form.handleSubmit();
       }}
     >
+      <div className="mb-5 flex justify-center">
+        <img src="/brewly-icon.png" alt="Brewly logo" className="h-25 w-25 object-contain" />
+      </div>
       <FormTitle title="Welcome back!" description="Sign in to your Brewly account and enjoy your favorite coffee." />
 
       {/* Email */}

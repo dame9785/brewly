@@ -2,6 +2,7 @@
 @import './styles/tokens.css';
 
 @theme inline {
+  /*Colors*/
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -14,11 +15,16 @@
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
 
+  /*Error color*/
+  --color-error: var(--error);
+
+  /*Border color*/
   --color-border: var(--border);
 
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  /*Font style*/
   --font-sans: var(--font-family-sans);
 
   --radius-sm: var(--radius-token-sm);

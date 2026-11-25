@@ -11,6 +11,9 @@ import Input from '#/components/ui/Input';
 import FormTitle from '#/components/ui/Form-title';
 import Button from '@/components/ui/Button';
 
+// //Validation schemas
+import { registerSchema } from '@/validations/auth-schemas/register.schema';
+
 function RegisterForm() {
   const navigate = useNavigate();
 
@@ -20,6 +23,10 @@ function RegisterForm() {
       email: '',
       password: '',
       confirmPassword: '',
+    },
+
+    validators: {
+      onSubmit: registerSchema,
     },
 
     onSubmit: async ({ value }) => {
@@ -41,7 +48,12 @@ function RegisterForm() {
       {/* Username */}
       <form.Field name="name">
         {(field) => (
-          <FormField label="Name" htmlFor="name" icon={<UserRound size={18} />}>
+          <FormField
+            error={field.state.meta.errors[0]?.message}
+            label="Name"
+            htmlFor="name"
+            icon={<UserRound size={18} />}
+          >
             <Input
               id="name"
               type="text"
@@ -57,7 +69,12 @@ function RegisterForm() {
       {/* Email */}
       <form.Field name="email">
         {(field) => (
-          <FormField label="Email" htmlFor="email" icon={<Mail size={18} />}>
+          <FormField
+            error={field.state.meta.errors[0]?.message}
+            label="Email"
+            htmlFor="email"
+            icon={<Mail size={18} />}
+          >
             <Input
               id="email"
               type="email"
@@ -73,7 +90,12 @@ function RegisterForm() {
       {/* Password */}
       <form.Field name="password">
         {(field) => (
-          <FormField label="Password" htmlFor="password" icon={<Lock size={18} />}>
+          <FormField
+            error={field.state.meta.errors[0]?.message}
+            label="Password"
+            htmlFor="password"
+            icon={<Lock size={18} />}
+          >
             <Input
               id="password"
               type="password"
@@ -89,7 +111,12 @@ function RegisterForm() {
       {/* Confirm password */}
       <form.Field name="confirmPassword">
         {(field) => (
-          <FormField label="Confirm password" htmlFor="confirmPassword" icon={<Lock size={18} />}>
+          <FormField
+            error={field.state.meta.errors[0]?.message}
+            label="Confirm password"
+            htmlFor="confirmPassword"
+            icon={<Lock size={18} />}
+          >
             <Input
               id="confirmPassword"
               type="password"

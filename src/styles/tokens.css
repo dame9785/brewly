@@ -9,13 +9,16 @@
   --secondary: #d9c7ae;
   --secondary-foreground: #211a16;
 
-  --surface: #ffffff;
+  --surface: #ede2d2;
   --surface-muted: #eee5d8;
 
   --border: #ded2c1;
 
   --accent: #b87545;
   --accent-foreground: #ffffff;
+
+  /* Feedback colors */
+  --error: #dc2626;
 
   /* Typography */
   --font-family-sans: Arial, Helvetica, sans-serif;

@@ -23,7 +23,7 @@ function FormField({ label, htmlFor, children, error, description, icon }: Props
 
       {description && <p className="text-muted-foreground text-sm">{description}</p>}
 
-      {error && <p className="text-destructive text-sm">{error}</p>}
+      {error && <p className="text-error text-sm">{error}</p>}
     </div>
   );
 }

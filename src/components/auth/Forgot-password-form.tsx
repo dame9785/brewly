@@ -37,8 +37,8 @@ function ForgotPasswordForm() {
       });
 
       if (error) {
-        toast.error('Something went wrong', {
-          description: 'Please try again later.',
+        toast.error('Password reset request failed', {
+          description: error.message || 'Please try again later.',
         });
 
         return;

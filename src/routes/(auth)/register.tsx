@@ -1,10 +1,19 @@
-// // React Routing & Taanstack react-form
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
+import { getSession } from '@/lib/auth-server';
 
 // // Components
 import RegisterForm from '#/components/auth/Register-form';
 
 export const Route = createFileRoute('/(auth)/register')({
+  beforeLoad: async () => {
+    const session = await getSession();
+
+    if (session) {
+      throw redirect({
+        to: '/',
+      });
+    }
+  },
   component: RegisterPage,
 });
 

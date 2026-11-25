@@ -8,7 +8,7 @@ import { authClient } from '@/lib/auth-client';
 // //Lucide-React Icons
 import { UserRound, Mail, Lock } from 'lucide-react';
 
-// // TOAST POP UP
+// // TOAST Popup
 import { toast } from 'sonner';
 
 // // Components
@@ -35,6 +35,7 @@ function RegisterForm() {
       onSubmit: registerSchema,
     },
 
+    // Run form validation on submit and display errors if validation fails.
     onSubmit: async ({ value }) => {
       const { error } = await authClient.signUp.email({
         name: value.name,
@@ -42,17 +43,29 @@ function RegisterForm() {
         password: value.password,
       });
 
+      // Error hanndle if form data validation failed.Show toast error
       if (error) {
-        toast.error('Registration failed', {
-          description: error.message || 'Something went wrong. Please try again.',
+        // Check if email already existing
+        const isEmailTaken =
+          error.message?.toLowerCase().includes('Already') || error.message?.toLowerCase().includes('exists');
+
+        toast.error(isEmailTaken ? 'Email already registered' : 'Registration failed', {
+          description: isEmailTaken
+            ? 'An account with this email address already exists.'
+            : error.message || 'Something went wrong. Please try again.',
         });
+
         console.error('Registration failed:', error);
         return;
       }
 
+      // Account successfully registration
       toast.success('Account created successfully!', {
         description: 'Welcome to Brewly! Your account is ready.',
       });
+
+      // Redirect To landing page
+      await navigate({ to: '/' });
     },
   });
 

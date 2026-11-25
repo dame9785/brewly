@@ -46,16 +46,30 @@ body,
 
 body {
   margin: 0;
-  background-color: var(--background);
+  min-height: 100vh;
+  background:
+    linear-gradient(rgb(33 26 22 / 45%), rgb(33 26 22 / 45%)),
+    url('/public/brewly-coffee-hero.png') center / cover fixed no-repeat;
   color: var(--foreground);
   font-family: var(--font-family-sans);
 }
 
 /*SONNER POP UP*/
-[data-sonner-toast] {
-  border-radius: 1rem !important;
-  box-shadow:
-    0 8px 24px rgb(33 26 22 / 10%),
-    0 2px 6px rgb(33 26 22 / 5%) !important;
-  padding: 16px !important;
+/* Error toast */
+[data-sonner-toast][data-type='error'] {
+  background: var(--background) !important;
+  color: var(--error) !important;
+  border: 1px solid var(--error) !important;
+}
+
+[data-sonner-toast][data-type='error'] [data-icon] {
+  color: var(--error) !important;
+}
+
+[data-sonner-toast][data-type='error'] [data-title] {
+  color: var(--error) !important;
+}
+
+[data-sonner-toast][data-type='error'] [data-description] {
+  color: var(--foreground) !important;
 }

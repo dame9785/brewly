@@ -31,6 +31,8 @@ function RegisterForm() {
 
     onSubmit: async ({ value }) => {
       console.log(value);
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
     },
   });
 
@@ -100,6 +102,7 @@ function RegisterForm() {
               id="password"
               type="password"
               placeholder="Password"
+              showPasswordToggle
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
               onBlur={field.handleBlur}
@@ -121,6 +124,7 @@ function RegisterForm() {
               id="confirmPassword"
               type="password"
               placeholder="Confirm password"
+              showPasswordToggle
               value={field.state.value}
               onChange={(e) => field.handleChange(e.target.value)}
               onBlur={field.handleBlur}
@@ -131,7 +135,22 @@ function RegisterForm() {
 
       {/* Actions sumbit button & Go to login */}
       <div className="mt-3 flex gap-2">
-        <Button text="Create account" type="submit" variant="primary" size="s" />
+        <form.Subscribe
+          selector={(state) => ({
+            canSubmit: state.canSubmit,
+            isSubmitting: state.isSubmitting,
+          })}
+        >
+          {({ canSubmit, isSubmitting }) => (
+            <Button
+              text={isSubmitting ? 'Creating account...' : 'Create account'}
+              type="submit"
+              variant="primary"
+              size="s"
+              disabled={!canSubmit || isSubmitting}
+            />
+          )}
+        </form.Subscribe>
         <Button
           text="Go to login"
           type="button"

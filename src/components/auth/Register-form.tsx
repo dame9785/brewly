@@ -185,13 +185,7 @@ function RegisterForm() {
             />
           )}
         </form.Subscribe>
-        <Button
-          text="Go to login"
-          type="button"
-          variant="secondary"
-          size="s"
-          onClick={() => navigate({ to: '/login' })}
-        />
+        <Button text="Go back" type="button" variant="secondary" size="s" onClick={() => navigate({ to: '/login' })} />
       </div>
     </form>
   );

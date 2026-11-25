@@ -1,17 +1,17 @@
-// // Taanstack react-form && React-router
+// Tanstack react-form && React-router
 import { useForm } from '@tanstack/react-form';
 import { useNavigate } from '@tanstack/react-router';
 
-// //Auth-client
+// Auth-client
 import { authClient } from '#/lib/auth/auth-client';
 
-// //Lucide-React Icons
+// Lucide-React Icons
 import { UserRound, Mail, Lock } from 'lucide-react';
 
-// // TOAST Popup
+// TOAST Popup
 import { toast } from 'sonner';
 
-// // Components
+// Components
 import FormField from '@/components/ui/Form-field';
 import Input from '#/components/ui/Input';
 import FormTitle from '#/components/ui/Form-title';

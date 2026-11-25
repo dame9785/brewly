@@ -9,7 +9,7 @@ import { authClient } from '@/lib/auth/auth-client';
 import { toast } from 'sonner';
 
 // Zod validation schemas.
-import { forgotPasswordSchema } from '#/validations/auth-schemas/forgot-password-schemas';
+import { forgotPasswordSchema } from '#/validations/auth-schemas/forgot-password-schema';
 
 // Lucide-react Icons
 import { Mail } from 'lucide-react';
